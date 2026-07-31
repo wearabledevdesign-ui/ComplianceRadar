@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComplianceInformer | Technical & Functional Specifications</title>
+    <style>
+        :root {
+            --primary: #2196F3;
+            --secondary: #4CAF50;
+            --dark: #1A1A1B;
+            --light: #F8F9FA;
+            --accent: #FFD700;
+            --text-muted: #666;
+        }
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        .hero-badge {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 4rem auto;
+            font-size: 1.1rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin: 4rem 0;
+        }
+        .card {
+            padding: 2rem;
+            border-radius: 1.2rem;
+            background: white;
+            border: 1px solid #EEE;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+        .card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .tech-box {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            margin: 2rem 0;
+        }
+        .tech-tag {
+            background: #E3F2FD;
+            color: var(--primary);
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        .flag-row {
+            font-size: 2.2rem;
+            margin: 2.5rem 0;
+            text-align: center;
+            letter-spacing: 1.2rem;
+        }
+        .footer {
+            background: var(--dark);
+            color: #999;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+        .feature-list li::before {
+            content: "→";
+            color: var(--primary);
+            font-weight: bold;
+        }
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        .spec-table th, .spec-table td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid #EEE;
+        }
+        .spec-table th {
+            color: var(--primary);
+            font-weight: 600;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <span class="hero-badge">Reference Manual V1.0</span>
+    <h1 style="font-size: 3.5rem; margin: 1.5rem 0; font-weight: 800;">ComplianceInformer</h1>
+    <p style="font-size: 1.3rem; color: #CCC; max-width: 800px; margin: 0 auto;">Authorized Global Intelligence. Professional AI Orchestration. Executive Stability.</p>
+    <div class="flag-row">🇨🇭 🇪🇺 🇩🇪 🇬🇧 🇮🇹 🇫🇷 🇺🇸</div>
+</header>
+
+<div class="container">
+    <section>
+        <h2 class="section-title">Functional Deep Dive</h2>
+        <p class="section-subtitle">Designed for users who require technical transparency and granular control over their regulatory data footprint.</p>
+    </section>
+
+    <div class="grid">
+        <div class="card">
+            <h3>📅 "New Today" Engine</h3>
+            <p>A persistent monitoring system based on the <b>Calendar Day</b>. Highlighting does not reset on refresh; instead, it accumulates every update detected since <b>00:00:00</b> of the current day.</p>
+            <ul class="feature-list" style="font-size: 0.9rem;">
+                <li>Accumulative multi-refresh support</li>
+                <li>Visual "Blue Dot" indicators</li>
+                <li>Single-tap "New Only" triage</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>📌 Sticky Regulations</h3>
+            <p>Grant critical items <b>Immunity Status</b>. Pinned regulations are strictly excluded from the automated cleanup logic, remaining in the dashboard indefinitely until unpinned.</p>
+            <ul class="feature-list" style="font-size: 0.9rem;">
+                <li>Immune to 180-day archival</li>
+                <li>Dedicated "Pinned Only" dashboard</li>
+                <li>Persistent cross-sync storage</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>🤖 On-Device AI Core</h3>
+            <p>High-quality translation with absolute privacy. Every native regulation is transformed into professional English using <b>Local ML Kit Processing</b>.</p>
+            <ul class="feature-list" style="font-size: 0.9rem;">
+                <li>Zero-cloud data leakage</li>
+                <li>Dynamic re-translation on source change</li>
+                <li>Unified "% EN" progress metrics</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>📶 Network & Sync Logic</h3>
+            <p>Full control over data governance. Define exactly when and how the app interacts with international government servers.</p>
+            <ul class="feature-list" style="font-size: 0.9rem;">
+                <li>"Wi-Fi Only" connectivity guard</li>
+                <li>24-hour target sync scheduling</li>
+                <li>Low-latency background workers</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="tech-box">
+        <h2 style="margin-top: 0;">Technical Specifications</h2>
+        <table class="spec-table">
+            <tr>
+                <th>Data Pipeline</th>
+                <td>Direct 8-source integration (SPARQL 1.1 / RSS 2.0 / JSON API). Authoritative government streams only.</td>
+            </tr>
+            <tr>
+                <th>History Window</th>
+                <td>Configurable retention: 1 month, 3 months, 6 months (standard), or 12 months.</td>
+            </tr>
+            <tr>
+                <th>Notification Logic</th>
+                <td>Pro-active "Watchlist" system. System-level alerts triggered during background maintenance cycles.</td>
+            </tr>
+            <tr>
+                <th>Platform</th>
+                <td>Optimized for Android 13+. Minimum SDK 26. Built with high-density Jetpack Compose UI.</td>
+            </tr>
+            <tr>
+                <th>Subscription</th>
+                <td>Freemium model. Free Swiss/FINMA tier. Premium Global tier via Play Billing 9.1.0.</td>
+            </tr>
+        </table>
+    </section>
+
+    <section style="margin: 5rem 0;">
+        <h2 style="text-align: center;">Jurisdiction Reference</h2>
+        <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+            <span class="tech-tag">🇨🇭 CH Fedlex</span>
+            <span class="tech-tag">🇨🇭 CH FINMA</span>
+            <span class="tech-tag">🇪🇺 EU EUR-Lex</span>
+            <span class="tech-tag">🇬🇧 UK Legislation</span>
+            <span class="tech-tag">🇺🇸 US Fed Register</span>
+            <span class="tech-tag">🇮🇹 IT Parliament</span>
+            <span class="tech-tag">🇫🇷 FR Légifrance</span>
+            <span class="tech-tag">🇩🇪 DE Bundesgesetz</span>
+        </div>
+    </section>
+</div>
+
+<div class="footer">
+    <p style="font-weight: bold; color: white;">ComplianceInformer V1</p>
+    <p>&copy; 2026 Luly Compliance Solutions. All rights reserved.</p>
+    <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">Precision Data • Professional Stability • Executive Intelligence</p>
+</div>
+
+</body>
+</html>
