@@ -55,6 +55,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 1rem;
+            margin-top: 3rem;
         }
         .section-subtitle {
             text-align: center;
@@ -104,6 +105,8 @@
             font-size: 0.8rem;
             font-weight: bold;
             margin-right: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
         }
         .flag-row {
             font-size: 2.2rem;
@@ -147,6 +150,53 @@
             font-weight: 600;
             width: 30%;
         }
+        .source-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .source-card {
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 0.8rem;
+            border-left: 4px solid var(--primary);
+        }
+        .source-card h4 {
+            color: var(--dark);
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+        .source-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0.5rem 0;
+        }
+        .action-bar {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 0.8rem;
+            margin: 2rem 0;
+        }
+        .action-bar h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        .action-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #EEE;
+        }
+        .action-item:last-child {
+            border-bottom: none;
+        }
+        .action-icon {
+            font-size: 1.5rem;
+            min-width: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -160,63 +210,188 @@
 
 <div class="container">
     <section>
-        <h2 class="section-title">Functional Deep Dive</h2>
-        <p class="section-subtitle">Designed for users who require technical transparency and granular control over their regulatory data footprint.</p>
+        <h2 class="section-title">Architecture Overview</h2>
+        <p class="section-subtitle">ComplianceRadar uses a Hybrid Direct-Connect architecture, bypassing third-party aggregators to access government servers directly across 7 jurisdictions.</p>
+    </section>
+
+    <section class="tech-box">
+        <h2 style="margin-top: 0;">The 8-Source Intelligence Pipeline</h2>
+        <div class="source-grid">
+            <div class="source-card">
+                <h4>🇨🇭 Switzerland: Fedlex</h4>
+                <p>Deep SPARQL semantic queries retrieve primary legislation from the Federal Law database.</p>
+            </div>
+            <div class="source-card">
+                <h4>🇨🇭 Switzerland: FINMA</h4>
+                <p>Official "Delivery Solution" RSS feed monitors circulars, guidance, and announcements from the Swiss Financial Market Supervisory Authority.</p>
+            </div>
+            <div class="source-card">
+                <h4>🇪🇺 European Union: EUR-Lex</h4>
+                <p>High-volume sync via the EU Publications Office "Cellar" endpoint, optimized with Newest-First sort to ensure recent 2026 regulations are never missed.</p>
+            </div>
+            <div class="source-card">
+                <h4>🇬🇧 United Kingdom: UK Lex</h4>
+                <p>Automated ingestion of the UK National Archives Atom feed, supporting both primary acts and statutory instruments.</p>
+            </div>
+            <div class="source-card">
+                <h4>🇺🇸 United States: Federal Register</h4>
+                <p>JSON API integration tracking "Final Rules" published by every US agency, from the SEC to the EPA.</p>
+            </div>
+            <div class="source-card">
+                <h4>🇮🇹 Italy: Parliament & Gazette</h4>
+                <p>Dual-feed system combining deep historical SPARQL data with real-time RSS monitoring of the Gazzetta Ufficiale.</p>
+            </div>
+            <div class="source-card">
+                <h4>🇫🇷 France: National Archives</h4>
+                <p>Optimized ingestion of French legislative feeds, ensuring native-language accuracy before AI translation.</p>
+            </div>
+            <div class="source-card">
+                <h4>🇩🇪 Germany: National Archives</h4>
+                <p>Optimized ingestion of German legislative feeds, ensuring native-language accuracy before AI translation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Granular Logic & Filtering</h2>
+        <p class="section-subtitle">Rapid triage of large data volumes through specialized logic engines designed for professional workflows.</p>
     </section>
 
     <div class="grid">
         <div class="card">
             <h3>📅 "New Today" Engine</h3>
-            <p>A persistent monitoring system based on the <b>Calendar Day</b>. Highlighting does not reset on refresh; instead, it accumulates every update detected since <b>00:00:00</b> of the current day.</p>
+            <p>A persistent monitoring system based on <b>Calendar Day Logic</b>. Unlike standard apps that reset highlights on refresh, highlighting does not reset—instead, it accumulates every update detected since <b>00:00:00</b> of the current day.</p>
             <ul class="feature-list" style="font-size: 0.9rem;">
-                <li>Accumulative multi-refresh support</li>
-                <li>Visual "Blue Dot" indicators</li>
-                <li>Single-tap "New Only" triage</li>
+                <li>Baseline calculates "Today Start" at midnight</li>
+                <li>Blue Dot indicator persists throughout the day</li>
+                <li>Multi-refresh support—accumulates without clearing</li>
+                <li>Single-tap "New Only" filter access</li>
             </ul>
         </div>
         <div class="card">
             <h3>📌 Sticky Regulations</h3>
-            <p>Grant critical items <b>Immunity Status</b>. Pinned regulations are strictly excluded from the automated cleanup logic, remaining in the dashboard indefinitely until unpinned.</p>
+            <p>Grant critical items <b>Immortal Status</b>. Pinned regulations are strictly excluded from the automated cleanup logic, remaining in the dashboard indefinitely until unpinned.</p>
             <ul class="feature-list" style="font-size: 0.9rem;">
-                <li>Immune to 180-day archival</li>
-                <li>Dedicated "Pinned Only" dashboard</li>
+                <li>Immune to retention window archival</li>
+                <li>Dedicated "Pinned Only" dashboard view</li>
                 <li>Persistent cross-sync storage</li>
+                <li>Push Pin icon grants immunity</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>🔍 Advanced Search</h3>
+            <p>Global search bar indexes three data layers simultaneously for comprehensive discovery.</p>
+            <ul class="feature-list" style="font-size: 0.9rem;">
+                <li>Primary Title (English or translated)</li>
+                <li>Technical Description & abstract</li>
+                <li>Taxonomy Labels & categories</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>📆 "Upcoming" Shortcut</h3>
+            <p>Automatic high-density view for immediate priority management.</p>
+            <ul class="feature-list" style="font-size: 0.9rem;">
+                <li>Filters for deadlines within next 7 calendar days</li>
+                <li>Effective dates highlighted in chronological order</li>
+                <li>Quick triage for compliance requirements</li>
             </ul>
         </div>
         <div class="card">
             <h3>🤖 On-Device AI Core</h3>
             <p>High-quality translation with absolute privacy. Every native regulation is transformed into professional English using <b>Local ML Kit Processing</b>.</p>
             <ul class="feature-list" style="font-size: 0.9rem;">
-                <li>Zero-cloud data leakage</li>
+                <li>Zero-cloud data leakage guarantee</li>
                 <li>Dynamic re-translation on source change</li>
                 <li>Unified "% EN" progress metrics</li>
             </ul>
         </div>
         <div class="card">
             <h3>📶 Network & Sync Logic</h3>
-            <p>Full control over data governance. Define exactly when and how the app interacts with international government servers.</p>
+            <p>Full control over data governance and international access patterns.</p>
             <ul class="feature-list" style="font-size: 0.9rem;">
-                <li>"Wi-Fi Only" connectivity guard</li>
+                <li>"Wi-Fi Only" connectivity guard toggle</li>
                 <li>24-hour target sync scheduling</li>
                 <li>Low-latency background workers</li>
+                <li>Avoid cellular carrier charges</li>
             </ul>
         </div>
     </div>
+
+    <section>
+        <h2 class="section-title">Data Governance & Sovereignty</h2>
+        <p class="section-subtitle">Complete control over your regulatory data lifecycle.</p>
+    </section>
+
+    <section class="tech-box">
+        <h3>Customizable Retention Policy</h3>
+        <p>In Refresh Settings, define the dashboard's historical depth. During every sync, a background "Purge Engine" surgically deletes records older than your selected window, ensuring lightweight performance:</p>
+        <ul class="feature-list">
+            <li><b>1 Month</b> — High-velocity regulatory tracking</li>
+            <li><b>3 Months</b> — Quarterly compliance cycles</li>
+            <li><b>6 Months</b> — Standard (default) retention window</li>
+            <li><b>1 Year</b> — Extended historical archive</li>
+        </ul>
+    </section>
+
+    <section class="action-bar">
+        <h2 style="margin-top: 0; color: var(--primary);">Professional Workflow Actions</h2>
+        <p>Every regulation detail window includes a dedicated, color-coded action bar:</p>
+        <div class="action-item">
+            <div class="action-icon">🔗</div>
+            <div>
+                <b>Official Link (Blue)</b><br>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">Direct access to the authoritative source document</span>
+            </div>
+        </div>
+        <div class="action-item">
+            <div class="action-icon">📅</div>
+            <div>
+                <b>Calendar Sync (Green)</b><br>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">One-tap creation of a compliance deadline event</span>
+            </div>
+        </div>
+        <div class="action-item">
+            <div class="action-icon">📧</div>
+            <div>
+                <b>Executive Mail (Red)</b><br>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">Generates professional email draft with title, date, source, and link</span>
+            </div>
+        </div>
+        <div class="action-item">
+            <div class="action-icon">📤</div>
+            <div>
+                <b>Task Export</b><br>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">Standard Android sharing to Task/Project management tools</span>
+            </div>
+        </div>
+    </section>
 
     <section class="tech-box">
         <h2 style="margin-top: 0;">Technical Specifications</h2>
         <table class="spec-table">
             <tr>
                 <th>Data Pipeline</th>
-                <td>Direct 8-source integration: Authoritative government streams only.</td>
+                <td>Direct 8-source integration: Authoritative government streams only. Zero third-party aggregators.</td>
             </tr>
             <tr>
                 <th>History Window</th>
                 <td>Configurable retention: 1 month, 3 months, 6 months (standard), or 12 months.</td>
             </tr>
             <tr>
+                <th>Translation Engine</th>
+                <td>Google ML Kit on-device processing. Dynamic re-translation on source updates. Zero cloud data transmission.</td>
+            </tr>
+            <tr>
                 <th>Notification Logic</th>
                 <td>Pro-active "Watchlist" system. System-level alerts triggered during background maintenance cycles.</td>
+            </tr>
+            <tr>
+                <th>Refresh Scheduling</th>
+                <td>User-defined target sync time (e.g., 08:30 AM). Smart delay calculation for fresh workday start.</td>
+            </tr>
+            <tr>
+                <th>Connectivity</th>
+                <td>Toggle for cellular data usage. Wi-Fi-only mode prevents carrier charges during background tasks.</td>
             </tr>
             <tr>
                 <th>Platform</th>
@@ -224,13 +399,13 @@
             </tr>
             <tr>
                 <th>Subscription</th>
-                <td>Freemium model. Free Swiss/FINMA tier. Premium Global tier via Play Billing</td>
+                <td>Freemium model. Free Swiss/FINMA tier. Premium Global tier via Play Billing.</td>
             </tr>
         </table>
     </section>
 
     <section style="margin: 5rem 0;">
-        <h2 style="text-align: center;">Jurisdiction Reference</h2>
+        <h2 style="text-align: center; margin-bottom: 2rem;">Jurisdiction Coverage</h2>
         <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
             <span class="tech-tag">🇨🇭 CH Fedlex</span>
             <span class="tech-tag">🇨🇭 CH FINMA</span>
@@ -238,8 +413,9 @@
             <span class="tech-tag">🇬🇧 UK Legislation</span>
             <span class="tech-tag">🇺🇸 US Fed Register</span>
             <span class="tech-tag">🇮🇹 IT Parliament</span>
-            <span class="tech-tag">🇫🇷 FR Légifrance</span>
-            <span class="tech-tag">🇩🇪 DE Bundesgesetz</span>
+            <span class="tech-tag">🇮🇹 IT Gazette</span>
+            <span class="tech-tag">🇫🇷 FR Archives</span>
+            <span class="tech-tag">🇩🇪 DE Archives</span>
         </div>
     </section>
 </div>
