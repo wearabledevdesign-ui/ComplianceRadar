@@ -52,6 +52,9 @@
             padding: 1rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .logo-box img { width: 100%; height: 100%; object-fit: contain; }
         h1 {
@@ -71,14 +74,11 @@
         }
 
         /* Features */
-        .section-title { text-align: center; font-size: 2.5rem; margin: 6rem 0 1rem 0; font-weight: 800; }
-        .section-subtitle { text-align: center; color: var(--text-muted); max-width: 800px; margin: 0 auto 3rem auto; }
-
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 2rem;
-            margin-bottom: 4rem;
+            margin-top: 4rem;
         }
         .card {
             background: var(--bg-card);
@@ -104,31 +104,10 @@
             color: var(--primary);
         }
         .icon-circle svg { width: 24px; height: 24px; fill: currentColor; }
-
         h3 { font-size: 1.5rem; margin: 0 0 1rem 0; color: white; }
-        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
-        .feature-list { list-style: none; padding: 0; margin: 0; font-size: 0.85rem; }
-        .feature-list li { margin-bottom: 0.5rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem; }
-        .feature-list li::before { content: "?"; color: var(--primary); font-weight: bold; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* Source Grid */
-        .source-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 4rem 0;
-        }
-        .source-card {
-            padding: 1.5rem;
-            background: var(--bg-card);
-            border-radius: 1rem;
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--primary);
-        }
-        .source-card h4 { color: white; margin: 0 0 0.5rem 0; font-size: 1.1rem; }
-        .source-card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
-
-        /* Banner Wrap */
+        /* Banner Section */
         .banner-wrap {
             margin: 6rem 0;
             border-radius: 2.5rem;
@@ -138,24 +117,29 @@
         }
         .banner-wrap img { width: 100%; display: block; }
 
-        /* Actions */
-        .action-bar {
-            background: var(--bg-card);
-            padding: 2.5rem;
-            border-radius: 2rem;
-            margin: 4rem 0;
-            border: 1px solid var(--border);
-        }
-        .action-item {
+        /* Stats & Flags */
+        .stats-box {
             display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border);
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin: 4rem 0;
+            padding: 3rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: 2rem;
         }
-        .action-item:last-child { border-bottom: none; }
-        .action-icon { font-size: 1.8rem; min-width: 2.5rem; }
+        .stat-item { text-align: center; }
+        .stat-val { font-size: 2.5rem; font-weight: 800; color: var(--primary); display: block; }
+        .stat-lbl { color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+
+        .flag-strip {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 2rem;
+            margin: 3rem 0;
+            opacity: 0.8;
+        }
 
         footer {
             padding: 6rem 0;
@@ -175,14 +159,22 @@
         }
         .btn:hover { background: var(--primary-dark); transform: scale(1.05); }
 
-        .flag-strip {
-            display: flex;
-            justify-content: center;
+        /* Source Grid */
+        .source-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
-            font-size: 2rem;
-            margin: 3rem 0;
-            opacity: 0.8;
+            margin: 4rem 0;
         }
+        .source-card {
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+        }
+        .source-card h4 { color: white; margin: 0 0 0.5rem 0; font-size: 1.1rem; }
+        .source-card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
     </style>
 </head>
 <body>
@@ -190,7 +182,7 @@
 <header>
     <div class="container">
         <div class="logo-box">
-            <img src="assets/icon.png" alt="Logo">
+            <img src="./assets/icon.png" alt="ComplianceRadar">
         </div>
         <h1>ComplianceRadar</h1>
         <p class="hero-sub">Global Regulatory Intelligence. Professional Executive Stability. Direct-access data for the modern legal workflow.</p>
@@ -203,8 +195,8 @@
 </header>
 
 <div class="container">
-    <h2 class="section-title">Global Intelligence Pipeline</h2>
-    <p class="section-subtitle">ComplianceRadar bypasses aggregators to deliver information directly from 10 authoritative government sources.</p>
+    <h2 style="text-align: center; font-size: 2.5rem; margin: 6rem 0 1rem 0; font-weight: 800;">Global Intelligence Pipeline</h2>
+    <p style="text-align: center; color: var(--text-muted); max-width: 800px; margin: 0 auto 3rem auto;">ComplianceRadar bypasses aggregators to deliver information directly from 10 authoritative government sources.</p>
 
     <div class="source-grid">
         <div class="source-card">
@@ -249,9 +241,7 @@
         </div>
     </div>
 
-    <h2 class="section-title">Granular Logic & AI</h2>
-    <p class="section-subtitle">Professional executive workflows powered by on-device intelligence and specialized tracking engines.</p>
-
+    <h2 style="text-align: center; font-size: 2.5rem; margin: 6rem 0 1rem 0; font-weight: 800;">Granular Logic & AI</h2>
     <div class="grid">
         <div class="card">
             <div class="icon-circle">
@@ -259,11 +249,6 @@
             </div>
             <h3>Executive Summaries</h3>
             <p>Exactly 5 short bullet points focusing on practical impact. Our unique strategy ensures consistency across all languages.</p>
-            <ul class="feature-list">
-                <li>High-impact brief for every law</li>
-                <li>Consistent across EN, DE, FR, IT</li>
-                <li>Manual priority generation</li>
-            </ul>
         </div>
         <div class="card">
             <div class="icon-circle">
@@ -271,11 +256,6 @@
             </div>
             <h3>"New Today" Tracking</h3>
             <p>Monitoring based on true calendar day logic. Highlights accumulate throughout the day for reliable triage.</p>
-            <ul class="feature-list">
-                <li>Baseline resets at midnight</li>
-                <li>Indicators persist across refreshes</li>
-                <li>Single-tap prioritization</li>
-            </ul>
         </div>
         <div class="card">
             <div class="icon-circle">
@@ -283,11 +263,6 @@
             </div>
             <h3>Sticky Regulations</h3>
             <p>Grant critical items permanent status. Pinned regulations are strictly excluded from automated archival.</p>
-            <ul class="feature-list">
-                <li>Immune to data cleanup logic</li>
-                <li>Dedicated watchlist dashboard</li>
-                <li>Persistent local storage</li>
-            </ul>
         </div>
         <div class="card">
             <div class="icon-circle">
@@ -295,11 +270,6 @@
             </div>
             <h3>Smart Sync Engine</h3>
             <p>Records are only updated when legal content or dates change. Precision tracking without false alerts.</p>
-            <ul class="feature-list">
-                <li>Deep metadata parsing</li>
-                <li>Priority for in-force dates</li>
-                <li>Automatic translation backfill</li>
-            </ul>
         </div>
         <div class="card">
             <div class="icon-circle">
@@ -307,11 +277,6 @@
             </div>
             <h3>Privacy First Core</h3>
             <p>All translation and summarization happens locally on your device. Absolute data sovereignty.</p>
-            <ul class="feature-list">
-                <li>Zero cloud data leakage</li>
-                <li>Local ML Kit intelligence</li>
-                <li>Secure persistent database</li>
-            </ul>
         </div>
         <div class="card">
             <div class="icon-circle">
@@ -319,28 +284,27 @@
             </div>
             <h3>Professional Actions</h3>
             <p>Seamlessly integrate compliance deadlines into your existing executive management toolstack.</p>
-            <ul class="feature-list">
-                <li>One-tap Calendar creation</li>
-                <li>Executive Email drafts</li>
-                <li>Task management export</li>
-            </ul>
         </div>
     </div>
 
     <div class="banner-wrap">
-        <img src="assets/banner2.png" alt="Preview">
+        <img src="./assets/banner2.png" alt="App Dashboard Preview">
     </div>
 
-    <section class="action-bar">
-        <h2 style="margin-top: 0; color: var(--primary);">Retention Policy</h2>
-        <p style="color: var(--text-muted);">Surgically manage your data lifecycle with customizable retention windows, ensuring high performance regardless of volume.</p>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
-            <span class="tech-tag">1 Month</span>
-            <span class="tech-tag">3 Months</span>
-            <span class="tech-tag">6 Months</span>
-            <span class="tech-tag">1 Year</span>
+    <div class="stats-box">
+        <div class="stat-item">
+            <span class="stat-val">10</span>
+            <span class="stat-lbl">Jurisdictions</span>
         </div>
-    </section>
+        <div class="stat-item">
+            <span class="stat-val">100%</span>
+            <span class="stat-lbl">Authoritative</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-val">Zero</span>
+            <span class="stat-lbl">Cloud Leak</span>
+        </div>
+    </div>
 </div>
 
 <footer>
