@@ -2,429 +2,332 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LXRMVEPMZ7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LXRMVEPMZ7');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LXRMVEPMZ7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LXRMVEPMZ7');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compliance Radar | Technical & Functional Specifications</title>
+    <title>ComplianceRadar | Global Regulatory Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #2196F3;
-            --secondary: #4CAF50;
-            --dark: #1A1A1B;
-            --light: #F8F9FA;
-            --accent: #FFD700;
-            --text-muted: #666;
+            --primary-dark: #1976D2;
+            --bg-dark: #0A0F14;
+            --bg-card: #141A21;
+            --text-light: #E0E6ED;
+            --text-muted: #8899A6;
+            --border: #232D35;
         }
+        * { box-sizing: border-box; }
         body {
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
             margin: 0;
-            padding: 0;
-            background-color: white;
-        }
-        header {
-            background-color: var(--dark);
-            color: white;
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-        .hero-badge {
-            background-color: var(--primary);
-            color: white;
-            padding: 0.5rem 1.2rem;
-            border-radius: 2rem;
-            font-size: 0.85rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            line-height: 1.6;
         }
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 0 2rem;
         }
-        .section-title {
+
+        /* Hero Section */
+        header {
+            padding: 8rem 0 4rem 0;
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            margin-top: 3rem;
+            background: radial-gradient(circle at top, #1a237e 0%, var(--bg-dark) 70%);
         }
-        .section-subtitle {
-            text-align: center;
+        .logo-box {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem auto;
+            background: var(--bg-card);
+            border-radius: 1.5rem;
+            padding: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid var(--border);
+        }
+        .logo-box img { width: 100%; height: 100%; object-fit: contain; }
+        h1 {
+            font-size: clamp(3rem, 8vw, 4.5rem);
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -2px;
+            background: linear-gradient(to right, #FFF, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-sub {
+            font-size: 1.4rem;
             color: var(--text-muted);
             max-width: 800px;
-            margin: 0 auto 4rem auto;
-            font-size: 1.1rem;
+            margin: 1.5rem auto 3rem auto;
         }
+
+        /* Feature Cards */
+        .section-title { text-align: center; font-size: 2.5rem; margin: 4rem 0 1rem 0; font-weight: 800; }
+        .section-subtitle { text-align: center; color: var(--text-muted); max-width: 800px; margin: 0 auto 3rem auto; }
+
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin: 4rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
         .card {
-            padding: 2rem;
-            border-radius: 1.2rem;
-            background: white;
-            border: 1px solid #EEE;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            transition: all 0.3s ease;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+            transform: translateY(-10px);
             border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-        .card h3 {
-            color: var(--primary);
-            margin-top: 0;
-            font-size: 1.4rem;
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            background: rgba(33, 150, 243, 0.1);
+            border-radius: 12px;
             display: flex;
             align-items: center;
-            gap: 0.8rem;
-        }
-        .tech-box {
-            background: var(--light);
-            padding: 2rem;
-            border-radius: 1.5rem;
-            margin: 2rem 0;
-        }
-        .tech-tag {
-            background: #E3F2FD;
+            justify-content: center;
+            margin-bottom: 1.5rem;
             color: var(--primary);
-            padding: 0.2rem 0.6rem;
-            border-radius: 0.4rem;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-right: 0.5rem;
-            display: inline-block;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
         }
-        .flag-row {
-            font-size: 2.2rem;
-            margin: 2.5rem 0;
-            text-align: center;
-            letter-spacing: 1.2rem;
-        }
-        .footer {
-            background: var(--dark);
-            color: #999;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-        .feature-list {
-            list-style: none;
-            padding: 0;
-        }
-        .feature-list li {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.8rem;
-        }
-        .feature-list li::before {
-            content: "→";
-            color: var(--primary);
-            font-weight: bold;
-        }
-        .spec-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-        }
-        .spec-table th, .spec-table td {
-            text-align: left;
-            padding: 1rem;
-            border-bottom: 1px solid #EEE;
-        }
-        .spec-table th {
-            color: var(--primary);
-            font-weight: 600;
-            width: 30%;
-        }
+        h3 { font-size: 1.5rem; margin: 0 0 1rem 0; color: white; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+        .feature-list { list-style: none; padding: 0; margin: 0; font-size: 0.85rem; }
+        .feature-list li { margin-bottom: 0.5rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem; }
+        .feature-list li::before { content: "?"; color: var(--primary); font-weight: bold; }
+
+        /* Source Grid */
         .source-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
-            margin: 2rem 0;
+            margin: 4rem 0;
         }
         .source-card {
             padding: 1.5rem;
-            background: var(--light);
-            border-radius: 0.8rem;
+            background: var(--bg-card);
+            border-radius: 1rem;
+            border: 1px solid var(--border);
             border-left: 4px solid var(--primary);
         }
-        .source-card h4 {
-            color: var(--dark);
-            margin: 0.5rem 0;
-            font-size: 1rem;
+        .source-card h4 { color: white; margin: 0 0 0.5rem 0; font-size: 1.1rem; }
+        .source-card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+
+        /* Banner Wrap */
+        .banner-wrap {
+            margin: 6rem 0;
+            border-radius: 2.5rem;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
         }
-        .source-card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin: 0.5rem 0;
+        .banner-wrap img { width: 100%; display: block; }
+
+        /* Footer */
+        footer {
+            padding: 6rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            background: #05070a;
         }
-        .action-bar {
-            background: var(--light);
-            padding: 1.5rem;
-            border-radius: 0.8rem;
-            margin: 2rem 0;
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 1rem;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
         }
-        .action-bar h4 {
-            margin-top: 0;
+        .btn:hover { background: var(--primary-dark); transform: scale(1.05); }
+
+        .tech-tag {
+            background: #1a237e;
             color: var(--primary);
-        }
-        .action-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #EEE;
-        }
-        .action-item:last-child {
-            border-bottom: none;
-        }
-        .action-icon {
-            font-size: 1.5rem;
-            min-width: 2rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin: 0 0.3rem 0.6rem 0.3rem;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <span class="hero-badge">Reference Manual V1.0</span>
-    <h1 style="font-size: 3.5rem; margin: 1.5rem 0; font-weight: 800;">Compliance Radar</h1>
-    <p style="font-size: 1.3rem; color: #CCC; max-width: 800px; margin: 0 auto;">Authorized Global Intelligence. Professional AI Orchestration. Executive Stability.</p>
-    <div class="flag-row">🇨🇭 🇪🇺 🇩🇪 🇬🇧 🇮🇹 🇫🇷 🇺🇸</div>
+    <div class="container">
+        <div class="logo-box">
+            <img src="assets/icon.png" alt="ComplianceRadar Logo">
+        </div>
+        <h1>ComplianceRadar</h1>
+        <p class="hero-sub">Authorized Global Intelligence. Professional AI Orchestration. Executive Stability. Direct-access regulatory data for the modern legal workflow.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.luly.complianceinformer" class="btn">Download on Google Play</a>
+    </div>
 </header>
 
 <div class="container">
     <section>
         <h2 class="section-title">Architecture Overview</h2>
-        <p class="section-subtitle">ComplianceRadar uses a Hybrid Direct-Connect architecture, bypassing third-party aggregators to access government servers directly across 7 jurisdictions.</p>
-    </section>
+        <p class="section-subtitle">ComplianceRadar uses a Hybrid Direct-Connect architecture, bypassing third-party aggregators to access government servers directly across 10 authoritative sources.</p>
 
-    <section class="tech-box">
-        <h2 style="margin-top: 0;">The 8-Source Intelligence Pipeline</h2>
         <div class="source-grid">
             <div class="source-card">
-                <h4>🇨🇭 Switzerland: Fedlex</h4>
+                <h4>?? Switzerland: Fedlex</h4>
                 <p>Deep SPARQL semantic queries retrieve primary legislation from the Federal Law database.</p>
             </div>
             <div class="source-card">
-                <h4>🇨🇭 Switzerland: FINMA</h4>
-                <p>Official "Delivery Solution" RSS feed monitors circulars, guidance, and announcements from the Swiss Financial Market Supervisory Authority.</p>
+                <h4>?? Switzerland: FINMA</h4>
+                <p>Official RSS feed monitors circulars and guidance from the Swiss Financial Market Supervisory Authority.</p>
             </div>
             <div class="source-card">
-                <h4>🇪🇺 European Union: EUR-Lex</h4>
-                <p>High-volume sync via the EU Publications Office "Cellar" endpoint, optimized with Newest-First sort to ensure recent 2026 regulations are never missed.</p>
+                <h4>?? European Union: EUR-Lex</h4>
+                <p>High-volume sync via the EU "Cellar" endpoint, optimized for the latest 2026 regulations.</p>
             </div>
             <div class="source-card">
-                <h4>🇬🇧 United Kingdom: UK Lex</h4>
-                <p>Automated ingestion of the UK National Archives Atom feed, supporting both primary acts and statutory instruments.</p>
+                <h4>?? United Kingdom: UK Lex</h4>
+                <p>Automated ingestion of the National Archives feed, supporting primary acts and statutory instruments.</p>
             </div>
             <div class="source-card">
-                <h4>🇺🇸 United States: Federal Register</h4>
-                <p>JSON API integration tracking "Final Rules" published by every US agency, from the SEC to the EPA.</p>
+                <h4>?? United States: Fed Register</h4>
+                <p>JSON API integration tracking "Final Rules" published by every US agency (SEC, EPA, etc.).</p>
             </div>
             <div class="source-card">
-                <h4>🇮🇹 Italy: Parliament & Gazette</h4>
-                <p>Dual-feed system combining deep historical SPARQL data with real-time RSS monitoring of the Gazzetta Ufficiale.</p>
+                <h4>?? Italy: Parliament</h4>
+                <p>Dual-feed system combining SPARQL historical data with real-time Gazzetta Ufficiale monitoring.</p>
             </div>
             <div class="source-card">
-                <h4>🇫🇷 France: National Archives</h4>
-                <p>Optimized ingestion of French legislative feeds, ensuring native-language accuracy before AI translation.</p>
+                <h4>?? France: L�gifrance</h4>
+                <p>Optimized ingestion of French legislative feeds, ensuring native accuracy before AI processing.</p>
             </div>
             <div class="source-card">
-                <h4>🇩🇪 Germany: National Archives</h4>
-                <p>Optimized ingestion of German legislative feeds, ensuring native-language accuracy before AI translation.</p>
+                <h4>?? Germany: Bundesgesetz</h4>
+                <p>Direct API integration with NeuRIS to capture precise "In Force" dates and official identifiers.</p>
+            </div>
+            <div class="source-card">
+                <h4>?? Luxembourg: CSSF</h4>
+                <p>Automated monitoring of financial regulations and circulars from the CSSF Luxembourg.</p>
+            </div>
+            <div class="source-card">
+                <h4>?? Canada: Justice Laws</h4>
+                <p>Full-spectrum ingestion of Canadian Acts and Regulations directly from the Justice Department.</p>
             </div>
         </div>
     </section>
 
     <section>
-        <h2 class="section-title">Granular Logic & Filtering</h2>
-        <p class="section-subtitle">Rapid triage of large data volumes through specialized logic engines designed for professional workflows.</p>
+        <h2 class="section-title">Granular Logic & AI</h2>
+        <p class="section-subtitle">Rapid triage of large data volumes through specialized logic engines designed for professional executive workflows.</p>
     </section>
 
     <div class="grid">
         <div class="card">
-            <h3>📅 "New Today" Engine</h3>
-            <p>A persistent monitoring system based on <b>Calendar Day Logic</b>. Unlike standard apps that reset highlights on refresh, highlighting does not reset—instead, it accumulates every update detected since <b>00:00:00</b> of the current day.</p>
-            <ul class="feature-list" style="font-size: 0.9rem;">
-                <li>Baseline calculates "Today Start" at midnight</li>
-                <li>Blue Dot indicator persists throughout the day</li>
-                <li>Multi-refresh support—accumulates without clearing</li>
-                <li>Single-tap "New Only" filter access</li>
+            <div class="icon-circle">?</div>
+            <h3>AI Executive Summaries</h3>
+            <p>Get exactly 5 VERY SHORT bullet points (max 10 words each) focusing purely on the most critical practical impact for compliance.</p>
+            <ul class="feature-list">
+                <li>Summarize Once, Translate Often strategy</li>
+                <li>Zero-cost on-device summary translation</li>
+                <li>Manual "Summarize Now" priority override</li>
             </ul>
         </div>
         <div class="card">
-            <h3>📌 Sticky Regulations</h3>
-            <p>Grant critical items <b>Immortal Status</b>. Pinned regulations are strictly excluded from the automated cleanup logic, remaining in the dashboard indefinitely until unpinned.</p>
-            <ul class="feature-list" style="font-size: 0.9rem;">
-                <li>Immune to retention window archival</li>
+            <div class="icon-circle">?</div>
+            <h3>"New Today" Engine</h3>
+            <p>Persistent monitoring based on Calendar Day logic. Highlighting accumulates throughout the day since 00:00:00.</p>
+            <ul class="feature-list">
+                <li>Blue Dot indicator persists all day</li>
+                <li>Multi-refresh support without resetting</li>
+                <li>Single-tap "New Only" triage filter</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="icon-circle">?</div>
+            <h3>Sticky Regulations</h3>
+            <p>Grant critical items Immortal Status. Pinned regulations are strictly excluded from automated cleanup logic.</p>
+            <ul class="feature-list">
+                <li>Immune to 180-day retention archival</li>
                 <li>Dedicated "Pinned Only" dashboard view</li>
                 <li>Persistent cross-sync storage</li>
-                <li>Push Pin icon grants immunity</li>
             </ul>
         </div>
         <div class="card">
-            <h3>🔍 Advanced Search</h3>
-            <p>Global search bar indexes three data layers simultaneously for comprehensive discovery.</p>
-            <ul class="feature-list" style="font-size: 0.9rem;">
-                <li>Primary Title (English or translated)</li>
-                <li>Technical Description & abstract</li>
-                <li>Taxonomy Labels & categories</li>
+            <div class="icon-circle">?</div>
+            <h3>Smart Sync Engine</h3>
+            <p>Proprietary logic ensures records are only updated when legal content or dates actually change. No false "new" alerts.</p>
+            <ul class="feature-list">
+                <li>Deep Metadata parsing for UK/Germany</li>
+                <li>Precedence for "Coming Into Force" dates</li>
+                <li>Automatic missing translation back-filling</li>
             </ul>
         </div>
         <div class="card">
-            <h3>📆 "Upcoming" Shortcut</h3>
-            <p>Automatic high-density view for immediate priority management.</p>
-            <ul class="feature-list" style="font-size: 0.9rem;">
-                <li>Filters for deadlines within next 7 calendar days</li>
-                <li>Effective dates highlighted in chronological order</li>
-                <li>Quick triage for compliance requirements</li>
-            </ul>
-        </div>
-        <div class="card">
-            <h3>🤖 On-Device AI Core</h3>
-            <p>High-quality translation with absolute privacy. Every native regulation is transformed into professional English using <b>Local ML Kit Processing</b>.</p>
-            <ul class="feature-list" style="font-size: 0.9rem;">
+            <div class="icon-circle">??</div>
+            <h3>Privacy First Core</h3>
+            <p>Every native regulation is transformed into professional English using local ML Kit processing. Absolute data sovereignty.</p>
+            <ul class="feature-list">
                 <li>Zero-cloud data leakage guarantee</li>
-                <li>Dynamic re-translation on source change</li>
+                <li>On-device translation & summarization</li>
                 <li>Unified "% EN" progress metrics</li>
             </ul>
         </div>
         <div class="card">
-            <h3>📶 Network & Sync Logic</h3>
-            <p>Full control over data governance and international access patterns.</p>
-            <ul class="feature-list" style="font-size: 0.9rem;">
-                <li>"Wi-Fi Only" connectivity guard toggle</li>
-                <li>24-hour target sync scheduling</li>
-                <li>Low-latency background workers</li>
-                <li>Avoid cellular carrier charges</li>
+            <div class="icon-circle">?</div>
+            <h3>Professional Actions</h3>
+            <p>Seamlessly integrate compliance deadlines into your existing executive and management toolstack.</p>
+            <ul class="feature-list">
+                <li>One-tap Calendar event creation</li>
+                <li>Pre-filled Executive Email drafts</li>
+                <li>System-wide Task/Project export</li>
             </ul>
         </div>
     </div>
 
-    <section>
-        <h2 class="section-title">Data Governance & Sovereignty</h2>
-        <p class="section-subtitle">Complete control over your regulatory data lifecycle.</p>
-    </section>
+    <div class="banner-wrap">
+        <img src="assets/banner2.png" alt="App Dashboard Preview">
+    </div>
 
-    <section class="tech-box">
-        <h3>Customizable Retention Policy</h3>
-        <p>In Refresh Settings, define the dashboard's historical depth. During every sync, a background "Purge Engine" surgically deletes records older than your selected window, ensuring lightweight performance:</p>
-        <ul class="feature-list">
-            <li><b>1 Month</b> — High-velocity regulatory tracking</li>
-            <li><b>3 Months</b> — Quarterly compliance cycles</li>
-            <li><b>6 Months</b> — Standard (default) retention window</li>
-            <li><b>1 Year</b> — Extended historical archive</li>
-        </ul>
-    </section>
-
-    <section class="action-bar">
-        <h2 style="margin-top: 0; color: var(--primary);">Professional Workflow Actions</h2>
-        <p>Every regulation detail window includes a dedicated, color-coded action bar:</p>
-        <div class="action-item">
-            <div class="action-icon">🔗</div>
-            <div>
-                <b>Official Link (Blue)</b><br>
-                <span style="color: var(--text-muted); font-size: 0.9rem;">Direct access to the authoritative source document</span>
-            </div>
-        </div>
-        <div class="action-item">
-            <div class="action-icon">📅</div>
-            <div>
-                <b>Calendar Sync (Green)</b><br>
-                <span style="color: var(--text-muted); font-size: 0.9rem;">One-tap creation of a compliance deadline event</span>
-            </div>
-        </div>
-        <div class="action-item">
-            <div class="action-icon">📧</div>
-            <div>
-                <b>Executive Mail (Red)</b><br>
-                <span style="color: var(--text-muted); font-size: 0.9rem;">Generates professional email draft with title, date, source, and link</span>
-            </div>
-        </div>
-        <div class="action-item">
-            <div class="action-icon">📤</div>
-            <div>
-                <b>Task Export</b><br>
-                <span style="color: var(--text-muted); font-size: 0.9rem;">Standard Android sharing to Task/Project management tools</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="tech-box">
-        <h2 style="margin-top: 0;">Technical Specifications</h2>
-        <table class="spec-table">
-            <tr>
-                <th>Data Pipeline</th>
-                <td>Direct 8-source integration: Authoritative government streams only. Zero third-party aggregators.</td>
-            </tr>
-            <tr>
-                <th>History Window</th>
-                <td>Configurable retention: 1 month, 3 months, 6 months (standard), or 12 months.</td>
-            </tr>
-            <tr>
-                <th>Translation Engine</th>
-                <td>Google ML Kit on-device processing. Dynamic re-translation on source updates. Zero cloud data transmission.</td>
-            </tr>
-            <tr>
-                <th>Notification Logic</th>
-                <td>Pro-active "Watchlist" system. System-level alerts triggered during background maintenance cycles.</td>
-            </tr>
-            <tr>
-                <th>Refresh Scheduling</th>
-                <td>User-defined target sync time (e.g., 08:30 AM). Smart delay calculation for fresh workday start.</td>
-            </tr>
-            <tr>
-                <th>Connectivity</th>
-                <td>Toggle for cellular data usage. Wi-Fi-only mode prevents carrier charges during background tasks.</td>
-            </tr>
-            <tr>
-                <th>Platform</th>
-                <td>Optimized for Android 13+. Minimum SDK 26. Built with high-density Jetpack Compose UI.</td>
-            </tr>
-            <tr>
-                <th>Subscription</th>
-                <td>Freemium model. Free Swiss/FINMA tier. Premium Global tier via Play Billing.</td>
-            </tr>
-        </table>
-    </section>
-
-    <section style="margin: 5rem 0;">
-        <h2 style="text-align: center; margin-bottom: 2rem;">Jurisdiction Coverage</h2>
-        <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
-            <span class="tech-tag">🇨🇭 CH Fedlex</span>
-            <span class="tech-tag">🇨🇭 CH FINMA</span>
-            <span class="tech-tag">🇪🇺 EU EUR-Lex</span>
-            <span class="tech-tag">🇬🇧 UK Legislation</span>
-            <span class="tech-tag">🇺🇸 US Fed Register</span>
-            <span class="tech-tag">🇮🇹 IT Parliament</span>
-            <span class="tech-tag">🇮🇹 IT Gazette</span>
-            <span class="tech-tag">🇫🇷 FR Archives</span>
-            <span class="tech-tag">🇩🇪 DE Archives</span>
+    <section style="margin: 5rem 0; text-align: center;">
+        <h2 style="font-size: 2rem; margin-bottom: 2rem;">Global Coverage</h2>
+        <div style="max-width: 900px; margin: 0 auto;">
+            <span class="tech-tag">?? CH FEDLEX</span>
+            <span class="tech-tag">?? CH FINMA</span>
+            <span class="tech-tag">?? EU EUR-LEX</span>
+            <span class="tech-tag">?? UK LEGISLATION</span>
+            <span class="tech-tag">?? US FED REGISTER</span>
+            <span class="tech-tag">?? IT PARLIAMENT</span>
+            <span class="tech-tag">?? IT GAZETTE</span>
+            <span class="tech-tag">?? FR L�GIFRANCE</span>
+            <span class="tech-tag">?? DE BUNDESGESETZ</span>
+            <span class="tech-tag">?? LU CSSF</span>
+            <span class="tech-tag">?? CA JUSTICE</span>
         </div>
     </section>
 </div>
 
-<div class="footer">
-    <p style="font-weight: bold; color: white;">ComplianceRadar V1</p>
-    <p>&copy; 2026 WearableDevDesign. All rights reserved.</p>
-    <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">Precision Data • Professional Stability • Executive Intelligence</p>
-</div>
+<footer>
+    <div class="container">
+        <p style="font-weight: 800; font-size: 1.5rem; color: white; margin-bottom: 0.5rem;">ComplianceRadar</p>
+        <p style="margin-bottom: 1.5rem;"><a href="https://play.google.com/store/apps/details?id=com.luly.complianceinformer" style="color: var(--primary); text-decoration: none; font-weight: 600;">Get it on Google Play</a></p>
+        <p style="color: var(--text-muted);">&copy; 2026 Compliance Solutions. All rights reserved.</p>
+        <p style="margin-top: 3rem; font-size: 0.9rem; opacity: 0.4;">PRECISION ? STABILITY ? INTELLIGENCE</p>
+    </div>
+</footer>
 
 </body>
 </html>
