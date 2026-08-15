@@ -11,7 +11,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ComplianceRadar | Global Regulatory Intelligence</title>
+    <title>Compliance Radar | Global Regulatory Intelligence</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -44,14 +44,14 @@
             background: radial-gradient(circle at top, #1a237e 0%, var(--bg-dark) 70%);
         }
         .logo-box {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 2rem auto;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 2.5rem auto;
             background: white;
-            border-radius: 2rem;
+            border-radius: 2.5rem;
             padding: 0;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.6);
-            border: 4px solid var(--bg-card);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.6);
+            border: 5px solid var(--bg-card);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -70,16 +70,19 @@
         .hero-sub {
             font-size: 1.4rem;
             color: var(--text-muted);
-            max-width: 800px;
+            max-width: 850px;
             margin: 1.5rem auto 3rem auto;
         }
 
         /* Features */
+        .section-title { text-align: center; font-size: 2.5rem; margin: 6rem 0 1rem 0; font-weight: 800; color: white; }
+        .section-subtitle { text-align: center; color: var(--text-muted); max-width: 800px; margin: 0 auto 3rem auto; }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 2rem;
-            margin-top: 4rem;
+            margin-bottom: 4rem;
         }
         .card {
             background: var(--bg-card);
@@ -105,10 +108,11 @@
             color: var(--primary);
         }
         .icon-circle svg { width: 24px; height: 24px; fill: currentColor; }
-        h3 { font-size: 1.5rem; margin: 0 0 1rem 0; color: white; }
-        .card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* Banner Section */
+        h3 { font-size: 1.5rem; margin: 0 0 1rem 0; color: white; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
+
+        /* Banner Wrap */
         .banner-wrap {
             margin: 6rem 0;
             border-radius: 2.5rem;
@@ -139,8 +143,25 @@
             gap: 1.5rem;
             font-size: 2rem;
             margin: 3rem 0;
-            opacity: 0.8;
+            opacity: 0.9;
         }
+
+        /* Source Grid */
+        .source-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 4rem 0;
+        }
+        .source-card {
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+        }
+        .source-card h4 { color: white; margin: 0 0 0.5rem 0; font-size: 1.1rem; }
+        .source-card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
 
         footer {
             padding: 6rem 0;
@@ -159,23 +180,6 @@
             transition: all 0.3s;
         }
         .btn:hover { background: var(--primary-dark); transform: scale(1.05); }
-
-        /* Source Grid */
-        .source-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 4rem 0;
-        }
-        .source-card {
-            padding: 1.5rem;
-            background: var(--bg-card);
-            border-radius: 1rem;
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--primary);
-        }
-        .source-card h4 { color: white; margin: 0 0 0.5rem 0; font-size: 1.1rem; }
-        .source-card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
     </style>
 </head>
 <body>
@@ -185,19 +189,19 @@
         <div class="logo-box">
             <img src="./icon.png" alt="ComplianceRadar Logo">
         </div>
-        <h1>ComplianceRadar</h1>
+        <h1>Compliance Radar</h1>
         <p class="hero-sub">Global Regulatory Intelligence. Professional Executive Stability. Direct-access data for the modern legal workflow.</p>
         <div class="flag-strip">
             <span>&#127464;&#127469;</span> <span>&#127466;&#127482;</span> <span>&#127465;&#127466;</span> <span>&#127468;&#127463;</span>
-            <span>&#127470;&#127481;</span> <span>&#127467;&#127479;</span> <span>&#127482;&#127480;</span> <span>&#127464;&#127462;</span>
+            <span>&#127470;&#127481;</span> <span>&#127467;&#127479;</span> <span>&#127482;&#127480;</span> <span>&#127464;&#127462;</span> <span>&#127473;&#127482;</span>
         </div>
         <a href="https://play.google.com/store/apps/details?id=com.luly.complianceinformer" class="btn">Download on Google Play</a>
     </div>
 </header>
 
 <div class="container">
-    <h2 style="text-align: center; font-size: 2.5rem; margin: 6rem 0 1rem 0; font-weight: 800;">Global Intelligence Pipeline</h2>
-    <p style="text-align: center; color: var(--text-muted); max-width: 800px; margin: 0 auto 3rem auto;">ComplianceRadar bypasses aggregators to deliver information directly from 10 authoritative government sources.</p>
+    <h2 class="section-title">Global Intelligence Pipeline</h2>
+    <p class="section-subtitle">ComplianceRadar bypasses aggregators to deliver information directly from 10 authoritative government sources.</p>
 
     <div class="source-grid">
         <div class="source-card">
@@ -242,14 +246,16 @@
         </div>
     </div>
 
-    <h2 style="text-align: center; font-size: 2.5rem; margin: 6rem 0 1rem 0; font-weight: 800;">Granular Logic & AI</h2>
+    <h2 class="section-title">Granular Logic & AI</h2>
+    <p class="section-subtitle">Professional executive workflows powered by specialized tracking engines and language-aware intelligence.</p>
+
     <div class="grid">
         <div class="card">
             <div class="icon-circle">
                 <svg viewBox="0 0 24 24"><path d="M19,15c0,1.1-0.9,2-2,2H7c-1.1,0-2-0.9-2-2V7c0-1.1,0.9-2,2-2h10c1.1,0,2,0.9,2,2V15z M7,7v8h10V7H7z M12,9c-1.1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2S13.1,9,12,9z"/></svg>
             </div>
             <h3>Executive Summaries</h3>
-            <p>Exactly 5 short bullet points focusing on practical impact. Our unique strategy ensures consistency across all languages.</p>
+            <p>Get exactly 5 short bullet points focusing on practical impact. Our unique strategy ensures consistency across all languages.</p>
         </div>
         <div class="card">
             <div class="icon-circle">
@@ -276,7 +282,7 @@
             <div class="icon-circle">
                 <svg viewBox="0 0 24 24"><path d="M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9.11,14L12.11,17.03L12.87,15.07M18.5,10H16.5L11.5,22H13.5L14.75,19H20.25L21.5,22H23.5L18.5,10M15.59,17L17.5,11L19.41,17H15.59Z"/></svg>
             </div>
-            <h3>Language Accessibility</h3>
+            <h3>Global Language Briefs</h3>
             <p>Bridge the gap between jurisdictions. ComplianceRadar transforms native legislation into professional English, German, French, and Italian.</p>
         </div>
         <div class="card">
@@ -289,7 +295,7 @@
     </div>
 
     <div class="banner-wrap">
-        <img src="./banner2.png" alt="App Dashboard Preview">
+        <img src="./banner2.png" alt="App Interface Preview">
     </div>
 
     <div class="stats-box">
